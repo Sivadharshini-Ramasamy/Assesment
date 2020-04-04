@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="Style/style.css">
+</head>
+<body id="go">
+
+<div class="header">
+  <a href="#default" class="logo"> <img src="Weather_Logo.png"> </a>
+  <div class="header-right">
+    <a class="active" href="#home">Home</a>
+    <a href="#hourly">Hourly</a>
+    <a href="#63hours">36 Hours</a>
+    <a href="#weekend">Weekend</a>
+    <a href="#7days">7 Days</a>
+    <a href="#14days">14 Days</a>
+    <a href="#monthly">Monthly</a>
+  </div>
+</div>
+
+<!--Carousel-->
+<div class="container">
+    <br>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" >
+      <!-- Indicators -->
+     <!-- <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+      </ol> -->
+  
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+  
+        <div class="item active">
+          <img src="Sunny.png" alt="Sunny" >
+          <div class="carousel-caption">
+            <h1 id="sunnycity"></h1>
+            <p id="sunnytext"></p>
+          </div>
+        </div>
+  
+        <div class="item">
+          <img src="Rainy.png" alt="Rainy" >
+          <div class="carousel-caption">
+            <h1 id="rainycity"></h1>
+            <p id="rainytext"></p>
+          </div>
+        </div>
+      
+        <div class="item">
+          <img src="Clear.png" alt="Clear" >
+          <div class="carousel-caption">
+            <h1 id="clearcity"></h1>
+            <p id="cleartext"></p>
+          </div>
+        </div>
+  
+        <div class="item">
+          <img src="Cloudy.png" alt="Cloudy" >
+          <div class="carousel-caption">
+            <h1 id="cloudycity"></h1>
+            <p id="cloudytext"></p>
+          </div>
+        </div>
+
+        <div class="item">
+            <img src="HeavyRain.png" alt="Heavy Rain" >
+            <div class="carousel-caption">
+                <h1 id="heavycity"></h1>
+                <p id="heavytext"></p>
+            </div>
+          </div>
+    
+          <div class="item">
+            <img src="Mist.png" alt="Mist" >
+            <div class="carousel-caption">
+                <h1 id="mistcity"></h1>
+                <p id="misttext"></p>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="Overcast.png" alt="Overcast" >
+            <div class="carousel-caption">
+                <h1 id="overcastcity"></h1>
+                <p id="overcasttext"></p>
+            </div>
+          </div>
+    
+          <div class="item">
+            <img src="PartlyCloudy.png" alt="PartlyCloudy" > 
+            <div class="carousel-caption">
+                <h1 id="pcloudycity"></h1>
+                <p id="pcloudytext"></p>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="Sleet.png" alt="Sleet" >
+            <div class="carousel-caption">
+                <h1 id="sleetcity"></h1>
+                <p id="sleettext"></p>
+            </div>
+          </div>
+    
+          <div class="item">
+            <img src="Snow.png" alt="Snow" >
+            <div class="carousel-caption">
+                <h1 id="snowcity"></h1>
+                <p id="snowtext"></p>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="Thunder.png" alt="Thunder" >
+            <div class="carousel-caption">
+                <h1 id="thundercity"></h1>
+                <p id="thundertext"></p>
+            </div>
+          </div>
+      </div>
+  
+      <!-- Left and right controls -->
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+<!--Carousel-->
+
+<!-- Search Box -->
+<div class="container">
+    <h2>Please search your city here : </h2>
+    <div class="row">
+        <div class="col-md-12">
+                <div class="input-group">
+                    <input type="text" name="search" id="search" class="form-control" placeholder="City">
+                    <span class="input-group-btn">
+                        <input type="button" id="btnSubmit" name="commit" value="Search" class="btn btn-primary" data-disable-with="Search">
+                     </span>
+                </div>
+        </div>
+    </div>
+    <hr>
+</div>
+<!-- Search Box -->
+
+<!-- Accordin -->
+<div class = "container">
+    <div class="panel-group" id="accordionList">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h2 class="panel-title">
+          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" >
+          <span id="accTitle">  </span><img alt="image" id="weatherimg" >
+          </a>
+        </h2>
+      </div>
+      <div id="collapseOne" class="panel-collapse collapse in">
+        <div class="panel-body">
+          <span id="fahrenheit"></span>&#8457;</span> / <span id="celsius"></span> &#8451;
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+<!-- Accordin -->
+
+<!--Error Handling-->
+<div class="alert alert-danger" id="error-handle">
+</div>
+<!--Error Handling-->
+
+<!-- Footer -->
+<footer class="ct-footer">
+    <div class="container">
+      <ul class="ct-footer-list text-center-sm">
+        <li>
+          <h3 class="ct-footer-list-header">Social</h3>
+          <ul>
+            <li>
+              <a href="">Facebook</a>
+            </li>
+            <li>
+              <a href="">Twitter</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h3 class="ct-footer-list-header">Weather Tools</h3>
+          <ul>
+            <li>
+              <a href="">Weather Widget</a>
+            </li>
+            <li>
+              <a href="">Weather APIs</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h3 class="ct-footer-list-header">Public Relations</h3>
+          <ul>
+            <li>
+              <a href="">WebCorpCo Blog</a>
+            </li>
+            <li>
+              <a href="">Terms of Use</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h3 class="ct-footer-list-header">Support</h3>
+          <ul>
+            <li>
+              <a href="">FAQ</a>
+            </li>
+            <li>
+              <a href="">Contact Us</a>
+            </li>   
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </footer>
+<!-- Footer -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="JS/access.js">
+</script>
+</body>
+</html>
